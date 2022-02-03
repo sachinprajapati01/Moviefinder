@@ -6,7 +6,13 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 
-export default function Movie({Poster,Title,Year}) {
+
+export default function Movie({Poster,Title,Year,title,year}) {
+  
+  const addwish = (e) => {
+    console.log(title);
+  };
+
   return (
     <Card sx={{ maxWidth: 350 , display: 'inline-block',
         m:3,p:2
@@ -24,7 +30,17 @@ export default function Movie({Poster,Title,Year}) {
           </Typography>
           <Typography variant="body1" color="text.secondary" >
             Uploaded in {Year}
-          </Typography>
+            </Typography>
+            <h7>Add to Watchlist</h7>
+            <button onClick={addwish} style={{
+              border:'white',
+              background:'white',
+              color:"red",
+              paddingLeft:'27px',
+              margin:'0px',
+              fontSize:'33px',
+              fontWeight:'bold'
+          }} >&#10084;</button>
         </CardContent>
       </CardActionArea>
     </Card>
